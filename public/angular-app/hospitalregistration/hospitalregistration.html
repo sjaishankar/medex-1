@@ -1,0 +1,115 @@
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MedEx Registration</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.css" rel="stylesheet">
+
+</head>
+
+  <body id="page-top" style="background-image: url(/img/background4.png)">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <h1 class = "title">MedEx Registration</h1>
+      </div>
+    </nav>
+    <div class = "info" controller="formController">
+        <form class = "form">
+            <p>First Name: <input type = "text" name = "firstname" style="width:100px"> Last Name: <input type = "text" name = "lastname" style="width:150px"></p>
+            <p>Phone Number: <input type = "text" name = "number" style="width:125px"></p>
+            <p>Clinic Name: <input type = "text" name = "clinicname"></p>
+            <p>Email: <input type = "text" name = "email"></p>
+            <p>Zip Code: <input type = "text" ng-model="zipcode" name = "zipcode" id = "zipcode" style="width:75px"><p>
+            <p>Number of Beds: <input type = "text" name = "beds" style="width:50px"></p>
+            <p><a href = '#!/hospitalhomepage'><input type = "submit" name = "submit"></a></p>
+        </form>
+        <p style="padding-left:6em">Already a user? <a href='#!/hospitallogin'>Log in</a> here</p>
+    </div>
+    <div id = "map"></div>
+    <script>
+        var map;
+        var geocoder;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 39.5, lng: -98.35},
+                zoom: 3
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2BxSbYZHzLhxHWHKzV2zcVOv-6YOdnkA&callback=initMap"
+    async defer></script>
+
+      <!-- Header
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+            <div class="intro-heading text-uppercase"><span style="font-size:40pt">Welcome To The Medical Technology Redistribution Hub!</span></div>
+          <div class="intro-lead-in">Please Click on Your Institution Type</div>
+            <div class = "divbutton1"><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href = '#'>Clinics</a></div>
+            <div class = "divbutton2"><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#second">Hospitals</a></div>
+        </div>
+      </div>
+    </header>  -->
+      <!-- Angular JS -->
+    <script src="//code.angularjs.org/1.7.0-rc.0/angular.min.js"></script>
+    <script src = "app.js"></script>
+</body>
+
+<style>
+    header.masthead {
+      text-align: center;
+      color: indianred;
+      background-image: none;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: center center;
+      background-size: cover;
+    }
+    .title {
+        display:inline-block;
+        text-align:center;
+    }
+    .form{
+        margin-top: 7em;
+        margin-left:5em;
+        font-size:14pt;
+    }
+    .info{
+        float:left;
+        width: 45%;
+    }
+    input[type="text"]{
+        border-top:none;
+        border-left:none;
+        border-right:none;
+        background-color:none;
+        width:300px;
+        font-size:11pt;
+    }
+    #map {
+        float:right;
+        width: 600px;
+        height: 400px;
+        margin-top: 150px;
+        margin-right:75px;
+        align-content:center;
+        background-color: grey;
+      }
+</style>
