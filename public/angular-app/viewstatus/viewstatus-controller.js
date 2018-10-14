@@ -1,5 +1,5 @@
-angular.module("MyApp").controller("viewstatuscontroller",viewstatuscontroller);
+angular.module("MyApp").controller("viewStatusController",viewStatusController);
 
-function viewstatuscontroller(){
+function viewStatusController(){
 
 }
